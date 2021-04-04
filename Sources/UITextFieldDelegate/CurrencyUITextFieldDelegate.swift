@@ -137,6 +137,7 @@ extension CurrencyUITextFieldDelegate {
             
             textField.text = .negativeSymbol + (textField.text ?? "")
         }
+        textField.sendActions(for: .editingChanged)
     }
     
     /// Correctly delete characters when user taps remove key.
@@ -158,6 +159,7 @@ extension CurrencyUITextFieldDelegate {
                 textField.text = formatter.formattedStringWithAdjustedDecimalSeparator(from: text)
             }
         }
+        textField.sendActions(for: .editingChanged)
     }
     
     /// Formats text field's text with new input string and changed range
@@ -184,5 +186,6 @@ extension CurrencyUITextFieldDelegate {
         }
         
         textField.text = formatter.formattedStringWithAdjustedDecimalSeparator(from: updatedText)
+        textField.sendActions(for: .editingChanged)
     }
 }
